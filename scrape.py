@@ -8,6 +8,7 @@ browser = webdriver.Chrome(os.getcwd()+"\\chromedriver.exe")
 browser.get(target_url)
 def scrape():
     headers =[
+        "pageno",
         "name", 
         "light_years_from_earth", 
         "planet_mass", 
@@ -21,6 +22,7 @@ def scrape():
             li_tags:soup = ul_tag.find_all("li")
             temp_list = []
             li_tag:soup
+            temp_list.append(str(i))
             # print(ul_tag)
             for index,li_tag in enumerate(li_tags):
                 li_tag:soup
