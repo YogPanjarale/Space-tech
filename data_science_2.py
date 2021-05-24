@@ -33,11 +33,7 @@ for i in range(len(radius_list)):
         # print(name_list[i],mass_list[i],radius_list[i],gravity_list[i])
         print(planets[i])
         pass
-from plotly.express import scatter
-# frame = DataFrame({"radius":radius_list,"mass":mass_list,"name":name_list,"gravity":gravity_list,"hover_data_0":name_list})
-# plot  = scatter(x=radius_list,y=mass_list,size=gravity_list)
-# plot = scatter(frame,x="radius",y="mass",size="gravity",hover_data="name")
-# plot.show()
+
 
 lessthen10=[]
 from10to100 = []
@@ -52,29 +48,38 @@ print(f"Less Then 10 : {len(lessthen10)}")
 print(f"10 to 100 : {len(from10to100)}")
 print(set(planet_typelist))
 
-plot1 = scatter(x=radius_list,y=mass_list)
-plot1.show()
+if __name__ =="__main__":
+    from plotly.express import scatter
+    # frame = DataFrame({"radius":radius_list,"mass":mass_list,"name":name_list,"gravity":gravity_list,"hover_data_0":name_list})
+    # plot  = scatter(x=radius_list,y=mass_list,size=gravity_list)
+    # plot = scatter(frame,x="radius",y="mass",size="gravity",hover_data="name")
+    # plot.show()
+    plot1 = scatter(x=radius_list,y=mass_list)
+    plot1.show()
 
-import seaborn as sb
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
+
 
 l=[]
 for i,m in enumerate(mass_list):
     
     tl=[radius_list[i],m]
     l.append(tl)
-wcss =[]
-for i in range(1,11):
-    t= KMeans(n_clusters=i,init='k-means++',random_state=33)
-    t.fit(l)
+
+
+if __name__ =="__main__":
+    import seaborn as sb
+    import matplotlib.pyplot as plt
+    from sklearn.cluster import KMeans
+    wcss =[]
+    for i in range(1,11):
+        t= KMeans(n_clusters=i,init='k-means++',random_state=33)
+        t.fit(l)
     wcss.append(t.inertia_)
+    plt.figure(figsize=(10,5))
+    sb.lineplot(range(1,11),wcss,markers='o',color='orange')
 
-plt.figure(figsize=(10,5))
-sb.lineplot(range(1,11),wcss,markers='o',color='orange')
-
-plt.title('Elbow method')
-plt.xlabel('Number of clusters')
-plt.ylabel('WCSS')
-plt.show()
+    plt.title('Elbow method')
+    plt.xlabel('Number of clusters')
+    plt.ylabel('WCSS')
+    plt.show()
 
