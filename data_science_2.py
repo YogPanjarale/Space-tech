@@ -3,7 +3,7 @@ F = G (m1m2/r2)
 '''
 from data_science_1 import getPlanets
 from pandas import DataFrame
-from math import e
+from math import  exp
 # planets = getPlanets('HD 10180')['planets']
 planets = getPlanets()
 # print(planets)
@@ -24,7 +24,7 @@ for i in range(len(name_list)):
     radius = radius_list[i]
     name = name_list[i]
 
-    gravity = abs(float(mass*(5.972*e) + 24) / float((radius**2)*(6371000**2)*(6.674*e)-11)) 
+    gravity = abs(float(mass*exp(5.972) + 24) / float((radius**2)*(6371000**2)*exp(6.674)-11)) 
     gravity_list.append(gravity)
     # print(gravity)
 # print(max(radius_list))

@@ -5,7 +5,7 @@ terrestrials_and_super_earths = []
 for i in range(len(planets)):
     if planet_typelist[i]=="Super Earth" or planet_typelist[i]=="Terrestrial":
         terrestrials_and_super_earths.append(planets[i])
-print(len(terrestrials_and_super_earths))
+# print(len(terrestrials_and_super_earths))
 t=terrestrials_and_super_earths[:]
 orbital_period_list=[]
 orbital_radius_list=[]
@@ -28,8 +28,8 @@ for i in range(len(t)):
         if (_or<2 and _or>0.38): 
             orbital_radius_list.append(_or)
             orbital_period_list.append(_op)
-print(len(terrestrials_and_super_earths))
-print(terrestrials_and_super_earths[627])
+# print(len(terrestrials_and_super_earths))
+# print(terrestrials_and_super_earths[627])
 
 
 if __name__=='__main__':
