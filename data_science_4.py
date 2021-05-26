@@ -44,8 +44,9 @@ def calculateSpeed(oraduis,op):
     # print(speed,circum,op,orb,oraduis)
     return speed
     pass
+convert()
 if __name__=='__main__':
     s=calculateSpeed(1,365)
-    convert()
+    # convert()
     removeGreaterThan(200)
     print(len(terrestrials_and_super_earths))

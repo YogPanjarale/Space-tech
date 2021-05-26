@@ -11,6 +11,8 @@ orbital_period_list=[]
 orbital_radius_list=[]
 for i in range(len(t)):
     p=t[i]
+    tempi = terrestrials_and_super_earths.index(p)
+    terrestrials_and_super_earths[tempi]['in_goldilocks_zone']=False
     isUnkown=False
     if p['orbital_radius'].lower()=='Unknown'.lower():
         terrestrials_and_super_earths.remove(p)
@@ -26,6 +28,8 @@ for i in range(len(t)):
         _or=float(p['orbital_radius'].removesuffix(' AU'))
         _op=float(p['orbital_period'].removesuffix(' days'))
         if (_or<2 and _or>0.38): 
+            tempi = terrestrials_and_super_earths.index(p)
+            terrestrials_and_super_earths[tempi]['in_goldilocks_zone']=True
             orbital_radius_list.append(_or)
             orbital_period_list.append(_op)
 # print(len(terrestrials_and_super_earths))

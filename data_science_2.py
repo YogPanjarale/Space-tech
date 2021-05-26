@@ -24,8 +24,10 @@ for i in range(len(name_list)):
     radius = radius_list[i]
     name = name_list[i]
 
-    gravity = abs(float(mass*exp(5.972) + 24) / float((radius**2)*(6371000**2)*exp(6.674)-11)) 
+    G=float('6.67408e-11')
+    gravity = G*(mass*float('5.972e+24'))  / ((radius**2)*(6371000**2))
     gravity_list.append(gravity)
+    planets[i]['gravity']=gravity
     # print(gravity)
 # print(max(radius_list))
 for i in range(len(radius_list)):
