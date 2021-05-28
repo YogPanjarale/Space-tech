@@ -46,9 +46,10 @@ for g in gravity_list:
     elif (g<=10):
         lessthen10.append(g)
 
-print(f"Less Then 10 : {len(lessthen10)}")
-print(f"10 to 100 : {len(from10to100)}")
-print(set(planet_typelist))
+if __name__=="__main__":
+    print(f"Less Then 10 : {len(lessthen10)}")
+    print(f"10 to 100 : {len(from10to100)}")
+    print(set(planet_typelist))
 
 if __name__ =="__main__":
     from plotly.express import scatter
