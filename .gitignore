@@ -2,3 +2,4 @@ venv
 chromedriver.exe
 .vscode/settings.json
 planet_data.csv
+__pycache__
